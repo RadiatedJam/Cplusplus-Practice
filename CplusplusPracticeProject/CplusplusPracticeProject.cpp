@@ -2,10 +2,22 @@
 //
 
 #include <iostream>
+#include <string>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int testInt = 50;
+    unsigned testUnsighned = 100u;
+    float testFloat = 5.5f;
+    double testDouble = 0.5;
+    bool testBool = true;
+    char testChar = 'f';
+
+    std::string testString = "Hiya";
+
+    std::cout << "Hello World!\n"
+        << testString;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
