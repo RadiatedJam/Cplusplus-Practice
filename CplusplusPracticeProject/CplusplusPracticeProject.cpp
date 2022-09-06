@@ -4,8 +4,13 @@
 #include <iostream>
 #include <string>
 
+void BasicFunction() {
+    std::cout << "Basic funtction ran!\n";
+}
+
 int main()
 {
+    /*
     //examples of different variable types
     int testInt = 50;
     unsigned testUnsighned = 100u;
@@ -44,7 +49,7 @@ int main()
 
     shortendP += "\n" + paragraph.substr(20, std::string::npos);
 
-    /*
+    
     // input
     std::cout << "please enter a word.\n";
     std::string entryString = "";
@@ -77,28 +82,137 @@ int main()
     std::cout << "please enter a line of text.\n";
     std::getline(std::cin, lineOfText);
     std::cout << "you typed " << lineOfText << "!\n";
-    */
+    
 
     //selection
-    bool decision = false;
-    if (decision == true)
+    // if statements are esentially the same as C#
+    bool boolCheck = true;
+    int decision = 0;
+    if (decision == 0)
     {
-        std::cout << "decision was true!\n";
+        std::cout << "decision was 0!\n";
+    }
+    else if (decision == 1)
+    {
+        std::cout << "decision was 1!\n";
     }
     else
     {
-        std::cout << "decision was false!\n";
+        std::cout << "decision was no 0 or 1!\n";
     }
+
+    int errorCode = 2;
+
+    switch (errorCode)
+    {
+    case 0:
+    {
+        std::cout << "error was 0!\n";
+        break;
+    }
+    case 1:
+    {
+        std::cout << "error was 1!\n";
+        break;
+    }
+    case 2:
+    {
+        std::cout << "error was 2!\n";
+        break;
+    }
+    default:
+    {
+        std::cout << "error was unrecognized!\n";
+        break;
+    }
+    }
+    
+
+    
+    int direction = 0;
+
+    std::cout << "please pick a number between 1 to 4 to decide what direction you go in\n";
+    std::cin >> direction;
+
+    switch (direction)
+    {
+    case 1:
+    {
+        std::cout << "you went to the first direction";
+        break;
+    }
+    case 2:
+    {
+        std::cout << "you went to the second direction";
+        break;
+    }
+    case 3:
+    {
+        std::cout << "you went to the third direction";
+        break;
+    }
+    case 4:
+    {
+        std::cout << "you went to the fourth direction";
+        break;
+    }
+    default:
+    {
+        std::cout << "you din't pick any of the directions and got struck by lighting";
+        break;
+    }
+    }
+    
 
     //avanced if statement: ternary
     //written if line with other code, such as an assignment
     //statement.
     // it results in one of two values based on the condition
-    int ternResult = (decision ? 1 : 2);
+    //int ternResult = (decision ? 1 : 2);
+
+    //iteration
+    //while loops are the dame in C++ and C#
+    
+    bool whileB = true;
+
+    while (whileB == true)
+    {
+        //do the body of the loop
+        whileB = false;
+        //at the end check the condition, if is still true, we loop again
+    }
+
+    int doI = 3;
+    do {
+        ++doI;
+        std::cout << "dowhile ran " << doI << " times!\n";
+    } while (doI < 2);
+
+    
+    for ( int i = 0 ; i < 5; ++i)
+    {
+        // do the body of the loop
+        std::cout << "for loop ran " << i << " times!\n";;
+    }
+    
+
+    int searchResults = 25;
+    std::string google = "G";
+
+    for (int i = 0; i < searchResults; ++i)
+    {
+        google += "o";
+    }
+
+    google += "gle";
+    
+    std::cout << google << std::endl;
 
     //example of output to console
-    std::cout << "Hello World!\n";
-        
+    //std::cout << "Hello World!\n";
+    */    
+
+    BasicFunction();
 
 }
 
