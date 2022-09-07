@@ -5,7 +5,22 @@
 #include <string>
 
 void BasicFunction() {
-    std::cout << "Basic funtction ran!\n";
+    std::cout << "Basic function ran!\n";
+}
+
+//there exists a function called EarlyDeclare
+//this is called a forward declaration
+void EarlyDeclare();
+
+void ParameterFunc(int paramInt) 
+{
+    ++paramInt;
+    std::cout << "parameterFunc ran - paramInt = " << paramInt << "!\n";
+}
+
+int returnFunc()
+{
+    return 42;
 }
 
 int main()
@@ -212,8 +227,23 @@ int main()
     //std::cout << "Hello World!\n";
     */    
 
+    EarlyDeclare();
     BasicFunction();
 
+    int testInt = 4;
+    //like saying paramInt = test int
+    ParameterFunc(testInt);
+
+    int returnValue = returnFunc();
+    std::cout << "return value = " << returnValue << "!\n";
+
+}
+
+//implementation for EarlyDeclare that was declared at the top
+//name must match exactly
+void EarlyDeclare()
+{
+    std::cout << "early declare function ran!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
