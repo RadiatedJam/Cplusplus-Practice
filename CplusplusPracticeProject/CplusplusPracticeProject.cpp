@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <stdlib.h> // to use rand()
+#include <time.h> // used to seed rand
 
 void BasicFunction() {
     std::cout << "Basic function ran!\n";
@@ -227,6 +230,7 @@ int main()
     //std::cout << "Hello World!\n";
     */    
 
+    /*
     EarlyDeclare();
     BasicFunction();
 
@@ -236,6 +240,75 @@ int main()
 
     int returnValue = returnFunc();
     std::cout << "return value = " << returnValue << "!\n";
+    
+
+    //static array
+    int intArray[] = { 0 ,1 , 2 };
+    const int intArraySize = 3;
+    int intArrayB[intArraySize];
+
+    //declare a vector
+    std::vector<int> intVector;
+
+    //add items to the vector using a function called
+    //push_back() and it adds, no surpirse, to the back
+    //(end) of the vector
+
+    intVector.push_back(1); //Vector = { 1 }
+    intVector.push_back(2); //Vector = { 1, 2 }
+    intVector.push_back(36); //Vector = { 1, 2, 36 }
+    intVector.push_back(40); //Vector = { 1, 2, 36, 40 }
+    intVector.push_back(111); //Vector = { 1, 2, 36, 40, 111 }
+
+    //you can get the cuttent size of the vector
+    //uning vetorName.size()
+    std::cout << "Vector is " << intVector.size() << "\n";
+    
+    //you can access items in avector just like an array
+    //using sqaure brackets
+    std::cout << "Vector index is " << intVector[1] << "\n";
+
+    //change the value of an item:
+    //(just like an array)
+    //BE CAREFUL = the item must already exist
+    intVector[1] = 5;
+    std::cout << "Vector index is " << intVector[1] << "\n";
+
+    //items can be removed using the arase() function
+    //erase uses iterators
+    //an iterator is like a marker for a particular point in
+    //the vector
+    //let's erase the first to elements
+    //parameter 1 - starting point
+    //parameter 2 - end BEFORE this point 
+    // vector = { 1, 2, 36, 40, 111 }
+    intVector.erase(intVector.begin(), intVector.begin() + 2);
+    std::cout << "vector is " << intVector.size() << "\n";
+    std::cout << "Vector index is " << intVector[0] << "\n";
+
+
+    for (int i = 0; i < intVector.size(); ++i)
+    {
+        std::cout << "Vector index is " << intVector[i] << "\n";
+    }
+    */
+
+    //generate a random number 
+    //anywhere from to 0 RAND_MAX (very very large)
+    //int totallyRandom = std::rand();
+    //std::cout << "random number is: " << totallyRandom << "\n";
+
+    //a seed is a starting point for the random calculations
+    //int seed = 100;
+    std::srand(time(NULL));
+    //between two numbers
+    int lowerNumber = 50;
+    int upperNumber = 150;
+    int range = upperNumber - lowerNumber;
+    int seededRandom = std::rand() % range;
+    std::cout << "random number is: " << seededRandom << "\n";
+
+
 
 }
 
